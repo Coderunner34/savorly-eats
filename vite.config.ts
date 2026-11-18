@@ -4,11 +4,9 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-// Safely resolve __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-// Standard Vite config for production
 export default defineConfig({
   plugins: [
     react(),
@@ -25,6 +23,6 @@ export default defineConfig({
   },
   build: {
     sourcemap: false,
-    minify: 'esbuild',
+    // NO 'minify' line here. Vite 8 uses its new default automatically.
   }
 })
